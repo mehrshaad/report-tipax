@@ -19,7 +19,7 @@ function App() {
         body: "This is a new post."
       })
       .then((response) => {
-        alert('posted');
+        alert(`posted\nresponse: ${response.data}`);
       });
   }
 
@@ -29,8 +29,8 @@ function App() {
 
   return (
     <div className="App">
-      <h1 style={{ color: "#15803d" }}>صفحه دریافت گزارشات</h1>
       <center>
+        <h1 style={{ color: "#15803d" }}>صفحه دریافت گزارشات</h1>
         <div class="ant-space-item"><button type="button" onClick={postRequest}
           class="ant-btn css-1wfosy4 ant-btn-default ant-dropdown-trigger w-50 h-12 bg-green-700 hover:bg-green-600 border-none rounded-md text-white text-center">
           <p class="text-sm" style={{ 'margin': '5px' }}>گزارش پورسانت جمع آوری مدل درآمدی جدید</p>

@@ -4,13 +4,30 @@ import './index.css';
 import App from './App';
 import Login from './Login';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter as Router } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Router>
-    <Login />
-    {/* <App /> */}
+    <Routes>
+      <Route
+        path="/"
+        element={<Login />}
+      />
+      <Route
+        path="/home"
+        element={<App />}
+      />
+      <Route
+        path="*"
+        element={<Navigate to="/" />}
+      />
+    </Routes>
   </Router>
 );
 

@@ -2,11 +2,7 @@ import "./App.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import 'bootstrap/dist/css/bootstrap.css';
-import App from "./App";
 import {
-    Routes,
-    Route,
-    Navigate,
     useNavigate
 } from "react-router-dom";
 
@@ -23,7 +19,7 @@ function Login() {
                 password: password
             })
             .then((response) => {
-                alert(`logged in\nUsername: ${username}\nPassword: ${password}`);
+                alert(`Response: ${response.data}\nUsername: ${username}\nPassword: ${password}`);
                 navigate("/home", { replace: true });
             });
     }
@@ -33,8 +29,8 @@ function Login() {
 
     return (
         <div className="Login">
-            <h1 style={{ color: "#15803d" }}>وارد شوید</h1>
             <center>
+                <h1 style={{ color: "#15803d" }}>وارد شوید</h1>
                 <label>
                     نام کاربری: <input name="username" onChange={e => setUser(e.target.value)} />
                 </label>
@@ -49,21 +45,7 @@ function Login() {
                 </button>
                 </div>
             </center>
-            <Routes>
-                <Route
-                    // exact
-                    path="/home"
-                    element={<App />}
-                />
-                <Route
-                    path="/"
-                    element={<Login />}
-                />
-                <Route
-                    path="*"
-                    element={<Navigate to="/" />}
-                />
-            </Routes>
+
         </div>
     );
 }
