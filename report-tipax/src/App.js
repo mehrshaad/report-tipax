@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import 'bootstrap/dist/css/bootstrap.css';
 
-
 function App() {
   const url = "https://jsonplaceholder.typicode.com/users";
   const [data, setData] = useState([]);
