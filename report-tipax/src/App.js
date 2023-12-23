@@ -1,10 +1,24 @@
 import "./App.css";
+import "./main.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import 'bootstrap/dist/css/bootstrap.css';
 
 function App() {
-  const url = "https://jsonplaceholder.typicode.com/users";
+  var jsonData = {
+    "ContractCode": "21842019352124386"
+  }
+  // {
+  //   "Period": "d/w/m/y",
+  //   "CampaignId": 0,
+  //   "ProvinceId": "00000000-0000-0000-0000-000000000000",
+  //   "CityId": "00000000-0000-0000-0000-000000000000",
+  //   "BranchId": "00000000-0000-0000-0000-000000000000"
+  // }
+
+  // const url = "http://jet.tipax.ir:100/odata/Tipax/DspContractTrackings/Tipax.GetGeneralResult";
+  // const url = "http://jet.tipax.ir:100/odata/Tipax/CmnCampaigns/Tipax.GetCampaignReport";
+  const url = "http://jet.tipax.ir:100/odata/Tipax/$metadata#Tipax.Api.Dispatch.TrackingResult";
   const [data, setData] = useState([]);
 
   const getRequest = () => {
@@ -13,18 +27,15 @@ function App() {
       .then((res) => setData(res.data));
   };
   function postRequest() {
-    axios
-      .post(url, {
-        title: "Hello World!",
-        body: "This is a new post."
-      })
-      .then((response) => {
-        alert(`posted\nresponse: ${response.data}`);
-      });
+    // axios
+    //   .post(url, jsonData)
+    //   .then((response) => {
+    //     alert(`posted\nresponse: ${response}`);
+    //   });
   }
 
   useEffect(() => {
-    getRequest();
+    // getRequest();
   }, []);
 
   return (
