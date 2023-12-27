@@ -7,7 +7,7 @@ import axios from "axios";
 import { MDBDataTable } from 'mdbreact';
 import logoTipax from "./static/media/logoTipax.svg";
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import { Container, Row, Col, Button, Card, ButtonGroup, Table } from 'react-bootstrap';
+import { Container, Row, Col, Button, Card, ButtonGroup } from 'react-bootstrap';
 import { Calendar, CalendarProvider, DatePicker } from "zaman";
 import {
   useNavigate
