@@ -16,11 +16,12 @@
     "react": "^18.2.0",
     "react-bootstrap": "^2.9.2",
     "react-dom": "^18.2.0",
+    "react-export-table-to-excel": "^1.0.6",
     "react-favicon": "^2.0.3",
     "react-helmet": "^6.1.0",
     "react-router": "^6.21.0",
     "react-router-dom": "^6.21.0",
-    "react-scripts": "^3.0.1",
+    "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4",
     "zaman": "^2.1.0"
   },

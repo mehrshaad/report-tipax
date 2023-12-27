@@ -2,24 +2,21 @@
 // import 'mdbreact/dist/css/style.css';
 import "./mdbreact/dist/css/mdb.css";
 import "./App.css";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { MDBDataTable } from 'mdbreact';
 import logoTipax from "./static/media/logoTipax.svg";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { Container, Row, Col, Button, Card, ButtonGroup } from 'react-bootstrap';
-import { Calendar, CalendarProvider, DatePicker } from "zaman";
-import {
-  useNavigate
-} from "react-router-dom";
+import { DatePicker } from "zaman";
+import { useNavigate } from "react-router-dom";
+import { downloadExcel } from 'react-export-table-to-excel';
 
 // import user from "./sample.json" assert { type: 'json' };;
 // console.log(user)
 function App() {
   const navigate = useNavigate();
-  var jsonData = {
-    "ContractCode": "21842019352124386"
-  }
+  const tableRef = useRef(null);
   // {
   //   "Period": "d/w/m/y",
   //   "CampaignId": 0,
@@ -31,46 +28,23 @@ function App() {
   // const url = "http://jet.tipax.ir:100/odata/Tipax/DspContractTrackings/Tipax.GetGeneralResult";
   // const url = "http://jet.tipax.ir:100/odata/Tipax/CmnCampaigns/Tipax.GetCampaignReport";
   const url = "http://jet.tipax.ir:100/odata/Tipax/$metadata#Tipax.Api.Dispatch.TrackingResult";
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(processData());
   const [selectedDate, setDate] = useState(new Date())
   const getRequest = () => {
     return axios
       .get(url)
       .then((res) => setData(res.data));
   };
-
-  // const fs = require('fs');
-  // const Papa = require('papaparse');
-
-  // const csvFilePath = 'src/static/data/tempData.csv'
-
-  // const file = fs.createReadStream(csvFilePath);
-
-  // var csvData = [];
-  // Papa.parse(file, {
-  //   header: true,
-  //   step: function (result) {
-  //     csvData.push(result.data)
-  //   },
-  //   complete: function (results, file) {
-  //     console.log('Complete', csvData.length, 'records.');
-  //   }
-  // });
   function processData() {
-    const sample = require('./static/data/tempData.json');
-    console.log(sample);
-    const keys = Object.keys(sample);
-    const values = Object.values(sample);
-
-    // Create columns based on keys
+    const jsonDataset = require('./static/data/tempData.json');
+    const keys = Object.keys(jsonDataset);
+    const values = Object.values(jsonDataset);
     const columns = keys.map((key, index) => ({
       label: key.toUpperCase(),
       field: key.toLowerCase(),
       sort: 'asc',
       width: 'auto',
     }));
-
-    // Create rows based on values
     const rows = values.map((_, rowIndex) => {
       const row = {};
       keys.forEach((key, colIndex) => {
@@ -78,14 +52,11 @@ function App() {
       });
       return row;
     });
-
-    // Combine columns and rows into the final MDBDataTable data
-    const mdbDataTableData = {
+    const dataTableData = {
       columns,
       rows,
     };
-
-    return mdbDataTableData;
+    return dataTableData;
   }
   function postRequest() {
     console.log(selectedDate)
@@ -98,9 +69,22 @@ function App() {
   function logOut() {
     navigate("/", { replace: true })
   }
+  function handleDownloadExcel() {
+    const jsonDataset = require('./static/data/tempData.json');
+    const header = Object.keys(jsonDataset);
+    const body = Object.values(jsonDataset);
+    downloadExcel({
+      fileName: `Report${new Date()}`,
+      sheet: "Sheet1",
+      tablePayload: {
+        header,
+        body: body,
+      },
+    });
+  }
 
   useEffect(() => {
-    processData()
+    console.log(tableRef)
     // getRequest();
   }, []);
   return (
@@ -180,14 +164,15 @@ function App() {
         </Container>
         <Container fluid className="shadow bg-body rounded">
           <Row className="mt-2 p-2 d-flex justify-content-around">
-            <Button variant="success" className="bg-green-700 hover:bg-green-600 border-none text-center" onClick={postRequest}>دریافت خروجی به صورت اکسل</Button>
+            <Button variant="success" className="bg-green-700 hover:bg-green-600 border-none text-center" onClick={handleDownloadExcel}>دریافت خروجی به صورت اکسل</Button>
           </Row>
-          <Row className="p-2 px-0 text-center">
+          <Row className="p-2 px-0 text-center overflow-auto">
             <MDBDataTable
               striped
               entriesOptions={[5, 10, 15, 20, 25]}
-              order={['name', 'asc']}
+              // order={['name', 'asc']}
               info={true}
+              entries={10}
               hover
               noBottomColumns
               searchLabel={'جست و جو کردن'}
@@ -196,7 +181,7 @@ function App() {
               displayEntries={true}
               responsiveMd
               barReverse
-              scrollX
+              // scrollX
               exportToCSV={true}
               // className=""
               searchingLabel={"hello"}
