@@ -53,7 +53,7 @@ function Login() {
             <div className="login_background h-screen">
                 <div className="container mx-auto undefined">
                     <div className="flex justify-center xl:justify-start">
-                        <form className="ant-form ant-form-horizontal css-1wfosy4 bg-white shadow-xl max-w-lg flex-1 mt-40 form-login p-10 mx-4 xl:mx-40">
+                        <form className="ant-form ant-form-horizontal css-1wfosy4 bg-white shadow-xl max-w-lg flex-1 mt-40 form-login p-10 mx-8 xl:mx-40">
                             <div className="text-center">
                                 <img
                                     alt="TipaxLogo"
