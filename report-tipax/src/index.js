@@ -4,6 +4,7 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import App from './App';
 import Login from './Login';
+import Test from './Test';
 import reportWebVitals from './reportWebVitals';
 import {
   BrowserRouter as Router,
@@ -23,6 +24,11 @@ root.render(
       <Route
         path="/home"
         element={<App />}
+      />
+      <Route
+      <Route
+        path="/test"
+        element={<Test />}
       />
       <Route
         path="*"

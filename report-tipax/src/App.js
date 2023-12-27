@@ -12,8 +12,6 @@ import { DatePicker } from "zaman";
 import { useNavigate } from "react-router-dom";
 import { downloadExcel } from 'react-export-table-to-excel';
 
-// import user from "./sample.json" assert { type: 'json' };;
-// console.log(user)
 function App() {
   const navigate = useNavigate();
   const tableRef = useRef(null);
@@ -182,10 +180,10 @@ function App() {
               responsiveMd
               barReverse
               // scrollX
-              exportToCSV={true}
+              // exportToCSV={true}
               // className=""
-              searchingLabel={"hello"}
-              entrieslabel={'qwe'}
+              // searchingLabel={"hello"}
+              entriesLabel={'تعداد نمایش در هر صفحه'}
               // onPageChange={(e)=>console.log(e)}
               search
               fixedHeader
