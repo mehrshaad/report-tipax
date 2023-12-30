@@ -1,7 +1,7 @@
 {
   "name": "report-tipax",
   "version": "0.1.0",
-  "homepage": "https://mehrshaad.github.io/TipaxReportPage",
+  "homepage": "https://mehrshaad.github.io/report-tipax",
   "private": true,
   "dependencies": {
     "@ant-design/icons": "^5.2.6",
@@ -23,7 +23,7 @@
     "react-helmet": "^6.1.0",
     "react-router": "^6.21.0",
     "react-router-dom": "^6.21.0",
-    "react-scripts": "^3.0.1",
+    "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4",
     "zaman": "^2.1.0"
   },

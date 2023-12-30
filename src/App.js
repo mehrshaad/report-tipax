@@ -2,7 +2,7 @@
 // import 'mdbreact/dist/css/style.css';
 import "./mdbreact/dist/css/mdb.css";
 import "./App.css";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { MDBDataTable } from 'mdbreact';
 import { MDBSpinner } from 'mdb-react-ui-kit';
@@ -16,7 +16,6 @@ import ContentLoader, { Code } from 'react-content-loader'
 
 function App() {
   const navigate = useNavigate();
-  const tableRef = useRef(null);
   // {
   //   "Period": "d/w/m/y",
   //   "CampaignId": 0,
@@ -121,7 +120,7 @@ function App() {
         </svg></div>
       </header>
       <div className="py-2 mt-20 px-20">
-        <Container fluid>
+        <Container fluid size='md'>
           <Row className="d-flex justify-content-around text-xl shadow bg-body rounded p-4">
             <Col className="d-flex justify-content-center">
               <p>تاریخ را انتخاب کنید</p>
@@ -194,7 +193,7 @@ function App() {
                 <span className='visually-hidden'>Loading...</span>
               </MDBSpinner>
             </div> : ''}
-          <Row className={`p-2 px-0 text-center overflow-auto ${(!showTable) ? "blur-bg" : ""}`}>
+          <Row className={`p-2 px-0 text-center justify-content-center align-items-center ${(!showTable) ? "blur-bg" : ""}`}>
             <MDBDataTable
               striped
               entriesOptions={[5, 10, 15, 20, 25]}

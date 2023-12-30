@@ -34,6 +34,11 @@
   }
 }
 
+div[data-test="table"] {
+  overflow-x: auto;
+  border-radius: var(--table-border-radius);
+}
+
 .libWrapper {
   display: flex;
   justify-content: center;
@@ -63,9 +68,11 @@
   border-style: none !important;
   vertical-align: middle !important;
 }
-.loader-text{
+
+.loader-text {
   text-shadow: 3px 5px 10px rgba(0, 0, 0, 0.4);
 }
+
 .green-spinner {
   color: #15803d;
   background-color: transparent !important;
