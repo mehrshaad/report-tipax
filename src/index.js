@@ -31,7 +31,7 @@ root.render(
       /> */}
       <Route
         path="*"
-        element={<Navigate to="/" />}
+        element={<Navigate to="/report-tipax/login" />}
       />
     </Routes>
   </Router>

@@ -1,7 +1,7 @@
 {
   "name": "report-tipax",
-  "version": "0.1.0",
-  "homepage": "https://mehrshaad.github.io/report-tipax/login",
+  "version": "0.1.5",
+  "homepage": "https://mehrshaad. github.io/report-tipax",
   "private": true,
   "dependencies": {
     "@ant-design/icons": "^5.2.6",
