@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/report-tipax/static/css/main.26e03bc6.css",
+    "main.js": "/report-tipax/static/js/main.9818e3f4.js",
+    "static/js/787.0b5c19a3.chunk.js": "/report-tipax/static/js/787.0b5c19a3.chunk.js",
+    "static/media/fa-solid-900.ttf": "/report-tipax/static/media/fa-solid-900.45a265d0f07b31cde85f.ttf",
+    "static/media/LoginBackground.jpg": "/report-tipax/static/media/LoginBackground.1054f11d19a3fd91090e.jpg",
+    "static/media/fa-brands-400.ttf": "/report-tipax/static/media/fa-brands-400.6205fd00fb1b573e9f0f.ttf",
+    "static/media/fa-solid-900.woff2": "/report-tipax/static/media/fa-solid-900.fb8184add5a3101ad0a3.woff2",
+    "static/media/fa-brands-400.woff2": "/report-tipax/static/media/fa-brands-400.8d3cabfc66809162fb4d.woff2",
+    "static/media/TipaxLogo.png": "/report-tipax/static/media/TipaxLogo.591a6cacf422a7fa5cd8.png",
+    "static/media/fa-regular-400.ttf": "/report-tipax/static/media/fa-regular-400.adc51aab4d771ab65f81.ttf",
+    "static/media/YekanBakhFaNumMedium.ttf": "/report-tipax/static/media/YekanBakhFaNumMedium.20384daf91229f9c958f.ttf",
+    "static/media/fa-regular-400.woff2": "/report-tipax/static/media/fa-regular-400.e931bc0d14f5bbb1da22.woff2",
+    "static/media/fa-v4compatibility.ttf": "/report-tipax/static/media/fa-v4compatibility.2eb7b3ef25042305f3ff.ttf",
+    "static/media/logoTipax.svg": "/report-tipax/static/media/logoTipax.6db9060bb391f7133b6f315961d8e0a1.svg",
+    "static/media/fa-v4compatibility.woff2": "/report-tipax/static/media/fa-v4compatibility.b3049b13a93f07e026fc.woff2",
+    "index.html": "/report-tipax/index.html",
+    "static/media/arrow_left.svg": "/report-tipax/static/media/arrow_left.2b063d13b9ef574cd7d1.svg",
+    "static/media/arrow_right.svg": "/report-tipax/static/media/arrow_right.0897f985cc5c7537b31d.svg",
+    "main.26e03bc6.css.map": "/report-tipax/static/css/main.26e03bc6.css.map",
+    "main.9818e3f4.js.map": "/report-tipax/static/js/main.9818e3f4.js.map",
+    "787.0b5c19a3.chunk.js.map": "/report-tipax/static/js/787.0b5c19a3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.26e03bc6.css",
+    "static/js/main.9818e3f4.js"
+  ]
+}
