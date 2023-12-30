@@ -5,12 +5,14 @@ import "./App.css";
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { MDBDataTable } from 'mdbreact';
+import { MDBSpinner } from 'mdb-react-ui-kit';
 import logoTipax from "./static/media/logoTipax.svg";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { Container, Row, Col, Button, Card, ButtonGroup } from 'react-bootstrap';
 import { DatePicker } from "zaman";
 import { useNavigate } from "react-router-dom";
 import { downloadExcel } from 'react-export-table-to-excel';
+import ContentLoader, { Code } from 'react-content-loader'
 
 function App() {
   const navigate = useNavigate();
@@ -26,7 +28,9 @@ function App() {
   // const url = "http://jet.tipax.ir:100/odata/Tipax/DspContractTrackings/Tipax.GetGeneralResult";
   // const url = "http://jet.tipax.ir:100/odata/Tipax/CmnCampaigns/Tipax.GetCampaignReport";
   const url = "http://jet.tipax.ir:100/odata/Tipax/$metadata#Tipax.Api.Dispatch.TrackingResult";
-  const [data, setData] = useState(processData());
+  const [data, setData] = useState([]);
+  const [showTable, setShowTable] = useState(false);
+  const [showSpinner, setSpinner] = useState(false);
   const [selectedDate, setDate] = useState(new Date())
   const getRequest = () => {
     return axios
@@ -34,7 +38,12 @@ function App() {
       .then((res) => setData(res.data));
   };
   function processData() {
-    const jsonDataset = require('./static/data/tempData.json');
+    // setShowTable(false)
+    if (!data) {
+      // setShowTable(true)
+      return {};
+    }
+    const jsonDataset = data;
     const keys = Object.keys(jsonDataset);
     const values = Object.values(jsonDataset);
     const columns = keys.map((key, index) => ({
@@ -54,37 +63,50 @@ function App() {
       columns,
       rows,
     };
+    // setShowTable(true)
     return dataTableData;
   }
   function postRequest() {
+    setSpinner(true)
+    setData(require('./static/data/tempData.json'))
     console.log(selectedDate)
     // axios
     //   .post(url, jsonData)
     //   .then((response) => {
-    //     alert(`posted\nresponse: ${response}`);
-    //   });
+      //     alert(`posted\nresponse: ${response}`);
+      //   });
+    setSpinner(false)
+    setShowTable(true)
   }
   function logOut() {
     navigate("/", { replace: true })
-  }
+  };
   function handleDownloadExcel() {
-    const jsonDataset = require('./static/data/tempData.json');
+    if (!data) {
+      return;
+    }
+    const jsonDataset = data;
     const header = Object.keys(jsonDataset);
     const body = Object.values(jsonDataset);
     downloadExcel({
-      fileName: `Report${new Date()}`,
+      fileName: `Report ${new Date()}`,
       sheet: "Sheet1",
       tablePayload: {
         header,
         body: body,
       },
     });
-  }
-
+  };
   useEffect(() => {
+    if (showTable) {
+      setTimeout(() => {
+        setShowTable(true);
+      }, 2000);
+    } else {
+      setShowTable(false);
+    }
     console.log(tableRef)
-    // getRequest();
-  }, []);
+  }, [showTable]);
   return (
     <>
       <header className="w-full fixed top-0 z-50 d-flex justify-between h-20 bg-green-700 border-b-2">
@@ -115,6 +137,7 @@ function App() {
                 position="center"
                 defaultValue={new Date()}
                 weekends={[6]}
+                direction="rtl"
                 onChange={(e) => setDate(e.value)}
               />
             </Col>
@@ -128,8 +151,8 @@ function App() {
                   <Card.Title>گزارشات پورسانت مدل درآمدی جدید</Card.Title>
                   <Card.Text>توضیحات</Card.Text>
                   <ButtonGroup aria-label="Basic example" className="d-flex justify-content-center" dir="ltr">
-                    <Button variant="success" className="bg-green-700 hover:bg-green-600 border-none text-center" onClick={postRequest}>جمع آوری</Button>
-                    <Button variant="success" className="bg-green-700 hover:bg-green-600 border-none text-center" onClick={postRequest}>توزیع</Button>
+                    <Button variant="success" className="bg-green-700 hover:bg-green-600 border-none text-center" onClick={() => postRequest()}>جمع آوری</Button>
+                    <Button variant="success" className="bg-green-700 hover:bg-green-600 border-none text-center" onClick={() => postRequest()}>توزیع</Button>
                   </ButtonGroup>
                 </Card.Body>
               </Card>
@@ -140,8 +163,8 @@ function App() {
                   <Card.Title>گزارشات پورسانت بر مبنای مالی</Card.Title>
                   <Card.Text>توضیحات</Card.Text>
                   <ButtonGroup aria-label="Basic example" className="d-flex justify-content-center" dir="ltr">
-                    <Button variant="success" className="bg-green-700 hover:bg-green-600 border-none text-center" onClick={postRequest}>جمع آوری</Button>
-                    <Button variant="success" className="bg-green-700 hover:bg-green-600 border-none text-center" onClick={postRequest}>توزیع</Button>
+                    <Button variant="success" className="bg-green-700 hover:bg-green-600 border-none text-center" onClick={() => postRequest()}>جمع آوری</Button>
+                    <Button variant="success" className="bg-green-700 hover:bg-green-600 border-none text-center" onClick={() => postRequest()}>توزیع</Button>
                   </ButtonGroup>
                 </Card.Body>
               </Card>
@@ -152,8 +175,8 @@ function App() {
                   <Card.Title>سایر گزارشات</Card.Title>
                   <Card.Text>توضیحات</Card.Text>
                   <ButtonGroup aria-label="Basic example" className="d-flex justify-content-center" dir="ltr">
-                    <Button variant="success" className="bg-green-700 hover:bg-green-600 border-none text-center" onClick={postRequest}>عودتی</Button>
-                    <Button variant="success" className="bg-green-700 hover:bg-green-600 border-none text-center" onClick={postRequest}>مختومه</Button>
+                    <Button variant="success" className="bg-green-700 hover:bg-green-600 border-none text-center" onClick={() => postRequest()}>عودتی</Button>
+                    <Button variant="success" className="bg-green-700 hover:bg-green-600 border-none text-center" onClick={() => postRequest()}>مختومه</Button>
                   </ButtonGroup>
                 </Card.Body>
               </Card>
@@ -161,10 +184,16 @@ function App() {
           </Row>
         </Container>
         <Container fluid className="shadow bg-body rounded">
-          <Row className="mt-2 p-2 d-flex justify-content-around">
-            <Button variant="success" className="bg-green-700 hover:bg-green-600 border-none text-center" onClick={handleDownloadExcel}>دریافت خروجی به صورت اکسل</Button>
+          <Row className={`mt-2 p-2 d-flex justify-content-around ${(!showTable) ? "blur-bg" : ""}`}>
+            <Button variant="success" className="bg-green-700 hover:bg-green-600 border-none text-center" onClick={() => handleDownloadExcel()}>دریافت خروجی به صورت اکسل</Button>
           </Row>
-          <Row className="p-2 px-0 text-center overflow-auto">
+          {(!showTable) ?
+            <div className='d-flex justify-content-center'>
+              <MDBSpinner role='status' size='lg' className="green-spinner shadow">
+                <span className='visually-hidden'>Loading...</span>
+              </MDBSpinner>
+            </div> : ''}
+          <Row className={`p-2 px-0 text-center overflow-auto ${(!showTable) ? "blur-bg" : ""}`}>
             <MDBDataTable
               striped
               entriesOptions={[5, 10, 15, 20, 25]}
@@ -181,7 +210,7 @@ function App() {
               barReverse
               // scrollX
               // exportToCSV={true}
-              // className=""
+              className="mx-2"
               // searchingLabel={"hello"}
               entriesLabel={'تعداد نمایش در هر صفحه'}
               // onPageChange={(e)=>console.log(e)}

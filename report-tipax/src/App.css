@@ -8,6 +8,7 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -38,6 +39,19 @@
   justify-content: center;
   flex-direction: column;
   gap: 14px;
+}
+
+.blur-bg {
+  backdrop-filter: blur(2px);
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
+  opacity: 0.2;
+  pointer-events: none;
+  user-select: none;
+}
+
+.green-spinner {
+  color: #15803d;
 }
 
 @media only screen and (min-width: 600px) {
