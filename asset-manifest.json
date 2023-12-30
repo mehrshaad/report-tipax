@@ -1,29 +1,29 @@
 {
   "files": {
-    "main.css": "/report-tipax/login/static/css/main.ead14eba.css",
-    "main.js": "/report-tipax/login/static/js/main.d0f03146.js",
-    "static/js/787.0b5c19a3.chunk.js": "/report-tipax/login/static/js/787.0b5c19a3.chunk.js",
-    "static/media/fa-solid-900.ttf": "/report-tipax/login/static/media/fa-solid-900.45a265d0f07b31cde85f.ttf",
-    "static/media/LoginBackground.jpg": "/report-tipax/login/static/media/LoginBackground.1054f11d19a3fd91090e.jpg",
-    "static/media/fa-brands-400.ttf": "/report-tipax/login/static/media/fa-brands-400.6205fd00fb1b573e9f0f.ttf",
-    "static/media/fa-solid-900.woff2": "/report-tipax/login/static/media/fa-solid-900.fb8184add5a3101ad0a3.woff2",
-    "static/media/fa-brands-400.woff2": "/report-tipax/login/static/media/fa-brands-400.8d3cabfc66809162fb4d.woff2",
-    "static/media/TipaxLogo.png": "/report-tipax/login/static/media/TipaxLogo.591a6cacf422a7fa5cd8.png",
-    "static/media/fa-regular-400.ttf": "/report-tipax/login/static/media/fa-regular-400.adc51aab4d771ab65f81.ttf",
-    "static/media/YekanBakhFaNumMedium.ttf": "/report-tipax/login/static/media/YekanBakhFaNumMedium.20384daf91229f9c958f.ttf",
-    "static/media/fa-regular-400.woff2": "/report-tipax/login/static/media/fa-regular-400.e931bc0d14f5bbb1da22.woff2",
-    "static/media/fa-v4compatibility.ttf": "/report-tipax/login/static/media/fa-v4compatibility.2eb7b3ef25042305f3ff.ttf",
-    "static/media/logoTipax.svg": "/report-tipax/login/static/media/logoTipax.6db9060bb391f7133b6f315961d8e0a1.svg",
-    "static/media/fa-v4compatibility.woff2": "/report-tipax/login/static/media/fa-v4compatibility.b3049b13a93f07e026fc.woff2",
-    "index.html": "/report-tipax/login/index.html",
-    "static/media/arrow_left.svg": "/report-tipax/login/static/media/arrow_left.2b063d13b9ef574cd7d1.svg",
-    "static/media/arrow_right.svg": "/report-tipax/login/static/media/arrow_right.0897f985cc5c7537b31d.svg",
-    "main.ead14eba.css.map": "/report-tipax/login/static/css/main.ead14eba.css.map",
-    "main.d0f03146.js.map": "/report-tipax/login/static/js/main.d0f03146.js.map",
-    "787.0b5c19a3.chunk.js.map": "/report-tipax/login/static/js/787.0b5c19a3.chunk.js.map"
+    "main.css": "/report-tipax/static/css/main.bd2be323.css",
+    "main.js": "/report-tipax/static/js/main.dad0eff7.js",
+    "static/js/787.0b5c19a3.chunk.js": "/report-tipax/static/js/787.0b5c19a3.chunk.js",
+    "static/media/fa-solid-900.ttf": "/report-tipax/static/media/fa-solid-900.45a265d0f07b31cde85f.ttf",
+    "static/media/LoginBackground.jpg": "/report-tipax/static/media/LoginBackground.1054f11d19a3fd91090e.jpg",
+    "static/media/fa-brands-400.ttf": "/report-tipax/static/media/fa-brands-400.6205fd00fb1b573e9f0f.ttf",
+    "static/media/fa-solid-900.woff2": "/report-tipax/static/media/fa-solid-900.fb8184add5a3101ad0a3.woff2",
+    "static/media/fa-brands-400.woff2": "/report-tipax/static/media/fa-brands-400.8d3cabfc66809162fb4d.woff2",
+    "static/media/TipaxLogo.png": "/report-tipax/static/media/TipaxLogo.591a6cacf422a7fa5cd8.png",
+    "static/media/fa-regular-400.ttf": "/report-tipax/static/media/fa-regular-400.adc51aab4d771ab65f81.ttf",
+    "static/media/YekanBakhFaNumMedium.ttf": "/report-tipax/static/media/YekanBakhFaNumMedium.20384daf91229f9c958f.ttf",
+    "static/media/fa-regular-400.woff2": "/report-tipax/static/media/fa-regular-400.e931bc0d14f5bbb1da22.woff2",
+    "static/media/fa-v4compatibility.ttf": "/report-tipax/static/media/fa-v4compatibility.2eb7b3ef25042305f3ff.ttf",
+    "static/media/logoTipax.svg": "/report-tipax/static/media/logoTipax.6db9060bb391f7133b6f315961d8e0a1.svg",
+    "static/media/fa-v4compatibility.woff2": "/report-tipax/static/media/fa-v4compatibility.b3049b13a93f07e026fc.woff2",
+    "index.html": "/report-tipax/index.html",
+    "static/media/arrow_left.svg": "/report-tipax/static/media/arrow_left.2b063d13b9ef574cd7d1.svg",
+    "static/media/arrow_right.svg": "/report-tipax/static/media/arrow_right.0897f985cc5c7537b31d.svg",
+    "main.bd2be323.css.map": "/report-tipax/static/css/main.bd2be323.css.map",
+    "main.dad0eff7.js.map": "/report-tipax/static/js/main.dad0eff7.js.map",
+    "787.0b5c19a3.chunk.js.map": "/report-tipax/static/js/787.0b5c19a3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ead14eba.css",
-    "static/js/main.d0f03146.js"
+    "static/css/main.bd2be323.css",
+    "static/js/main.dad0eff7.js"
   ]
 }
