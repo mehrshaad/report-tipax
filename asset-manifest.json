@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/report-tipax/static/css/main.bd2be323.css",
-    "main.js": "/report-tipax/static/js/main.7ee5c1ae.js",
+    "main.js": "/report-tipax/static/js/main.a1a64cb3.js",
     "static/js/787.0b5c19a3.chunk.js": "/report-tipax/static/js/787.0b5c19a3.chunk.js",
     "static/media/fa-solid-900.ttf": "/report-tipax/static/media/fa-solid-900.45a265d0f07b31cde85f.ttf",
     "static/media/LoginBackground.jpg": "/report-tipax/static/media/LoginBackground.1054f11d19a3fd91090e.jpg",
@@ -19,11 +19,11 @@
     "static/media/arrow_left.svg": "/report-tipax/static/media/arrow_left.2b063d13b9ef574cd7d1.svg",
     "static/media/arrow_right.svg": "/report-tipax/static/media/arrow_right.0897f985cc5c7537b31d.svg",
     "main.bd2be323.css.map": "/report-tipax/static/css/main.bd2be323.css.map",
-    "main.7ee5c1ae.js.map": "/report-tipax/static/js/main.7ee5c1ae.js.map",
+    "main.a1a64cb3.js.map": "/report-tipax/static/js/main.a1a64cb3.js.map",
     "787.0b5c19a3.chunk.js.map": "/report-tipax/static/js/787.0b5c19a3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bd2be323.css",
-    "static/js/main.7ee5c1ae.js"
+    "static/js/main.a1a64cb3.js"
   ]
 }
