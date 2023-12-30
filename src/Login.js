@@ -26,10 +26,10 @@ function Login() {
         //     .post(url, jsonData)
         //     .then((response) => {
         //         console.log(`Response: ${response}\nUsername: ${username}\nPassword: ${password}`);
-        //         navigate("/home", { replace: true });
+        //         navigate("/report-tipax/home", { replace: true });
         //     });
 
-        navigate("/home", { replace: true });
+        navigate("/report-tipax/home", { replace: true });
         // const response = await fetch(url, {
         //     method: "POST",
         //     body: jsonData,

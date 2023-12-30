@@ -18,11 +18,11 @@ root.render(
   <Router>
     <Routes>
       <Route
-        path="/"
+        path="/report-tipax/login"
         element={<Login />}
       />
       <Route
-        path="/home"
+        path="/report-tipax/home"
         element={<App />}
       />
       {/* <Route

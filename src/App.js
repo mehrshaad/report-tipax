@@ -78,7 +78,7 @@ function App() {
     setShowTable(true)
   }
   function logOut() {
-    navigate("/", { replace: true })
+    navigate("/report-tipax/login", { replace: true })
   };
   function handleDownloadExcel() {
     if (!data) {
