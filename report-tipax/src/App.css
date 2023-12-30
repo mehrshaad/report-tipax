@@ -50,8 +50,25 @@
   user-select: none;
 }
 
+.d-flex input,
+.d-flex input:focus,
+.d-flex input:default,
+.d-flex input:target,
+.d-flex input:visited,
+.d-flex input:active {
+  background-color: transparent !important;
+  border: none !important;
+  border-width: 4px;
+  text-align: center !important;
+  border-style: none !important;
+  vertical-align: middle !important;
+}
+.loader-text{
+  text-shadow: 3px 5px 10px rgba(0, 0, 0, 0.4);
+}
 .green-spinner {
   color: #15803d;
+  background-color: transparent !important;
 }
 
 @media only screen and (min-width: 600px) {

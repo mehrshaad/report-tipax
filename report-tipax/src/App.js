@@ -126,7 +126,7 @@ function App() {
             <Col className="d-flex justify-content-center">
               <p>تاریخ را انتخاب کنید</p>
             </Col>
-            <Col className="d-flex justify-content-center">
+            <Col className="d-flex justify-content-center" md={1}>
               <div class="vr"></div>
             </Col>
             <Col className="d-flex justify-content-center">
@@ -188,8 +188,9 @@ function App() {
             <Button variant="success" className="bg-green-700 hover:bg-green-600 border-none text-center" onClick={() => handleDownloadExcel()}>دریافت خروجی به صورت اکسل</Button>
           </Row>
           {(!showTable) ?
-            <div className='d-flex justify-content-center'>
-              <MDBSpinner role='status' size='lg' className="green-spinner shadow">
+            <div className='d-flex justify-content-center align-items-center'>
+              <strong className="px-2 loader-text">درحال خواندن دیتا...</strong>
+              <MDBSpinner role='status' size='sm' className="green-spinner">
                 <span className='visually-hidden'>Loading...</span>
               </MDBSpinner>
             </div> : ''}

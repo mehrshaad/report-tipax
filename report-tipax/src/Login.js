@@ -3,10 +3,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import tipaxLogo from "./static/media/TipaxLogo.png";
 import 'bootstrap/dist/css/bootstrap.css';
-import Favicon from "react-favicon";
-import {
-    useNavigate
-} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 function Login() {
