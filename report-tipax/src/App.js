@@ -73,8 +73,8 @@ function App() {
     // axios
     //   .post(url, jsonData)
     //   .then((response) => {
-      //     alert(`posted\nresponse: ${response}`);
-      //   });
+    //     alert(`posted\nresponse: ${response}`);
+    //   });
     setSpinner(false)
     setShowTable(true)
   }
@@ -105,7 +105,7 @@ function App() {
     } else {
       setShowTable(false);
     }
-    console.log(tableRef)
+    console.log(process.env.REACT_APP_API_KEY)
   }, [showTable]);
   return (
     <>
