@@ -29,7 +29,7 @@ function App() {
   const url = "http://jet.tipax.ir:100/odata/Tipax/$metadata#Tipax.Api.Dispatch.TrackingResult";
   const [data, setData] = useState([]);
   const [showTable, setShowTable] = useState(false);
-  const [showSpinner, setSpinner] = useState(false);
+  const [showLoadingCursor, setLoadingCursor] = useState(true);
   const [selectedDate, setDate] = useState(new Date())
   const getRequest = () => {
     return axios
@@ -66,7 +66,7 @@ function App() {
     return dataTableData;
   }
   function postRequest() {
-    setSpinner(true)
+    setLoadingCursor(true)
     setData(require('./static/data/tempData.json'))
     console.log(selectedDate)
     // axios
@@ -74,8 +74,8 @@ function App() {
     //   .then((response) => {
     //     alert(`posted\nresponse: ${response}`);
     //   });
-    setSpinner(false)
     setShowTable(true)
+    setLoadingCursor(false)
   }
   function logOut() {
     navigate("/report-tipax/login", { replace: true })
@@ -107,7 +107,7 @@ function App() {
     console.log(process.env.REACT_APP_API_KEY)
   }, [showTable]);
   return (
-    <>
+    <div style={(showLoadingCursor) ? { cursor: 'progress' } : { cursor: 'auto' }}>
       <header className="w-full fixed top-0 z-50 d-flex justify-between h-20 bg-green-700 border-b-2">
         <div><img src={logoTipax} alt="TipaxLogo"
           className="inline-block mx-5 w-32 mt-4" /></div>
@@ -223,7 +223,7 @@ function App() {
           </Row>
         </Container>
       </div>
-    </>
+    </div>
   );
 }
 
